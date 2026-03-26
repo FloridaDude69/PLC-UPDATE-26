@@ -1,0 +1,249 @@
+﻿using PLC_UPDATE_26.Models;
+using PLC_UPDATE_26.Utilities;
+
+namespace PLC_UPDATE_26.Services;
+
+/// <summary>
+/// Service for host computers to periodically sync with the PLC Update system
+/// This would typically run on each host computer
+/// </summary>
+public interface IHostSyncService
+{
+    Task<SyncResult> SyncWithRepositoryAsync(string hostName, List<string> filePathsToMonitor);
+    Task<UpdateCheckResult> CheckForUpdatesAsync(string hostName);
+    Task<VerificationResult> VerifyLocalFilesAsync(string hostName, List<string> filePaths);
+}
+
+public class HostSyncService : IHostSyncService
+{
+    private readonly FileUpdateClient _client;
+    private readonly IFileTimestampComparer _comparer;
+    private readonly ILogger<HostSyncService> _logger;
+
+    public HostSyncService(
+        FileUpdateClient client,
+        IFileTimestampComparer comparer,
+        ILogger<HostSyncService> logger)
+    {
+        _client = client;
+        _comparer = comparer;
+        _logger = logger;
+    }
+
+    /// <summary>
+    /// Sync local files with the central repository
+    /// </summary>
+    public async Task<SyncResult> SyncWithRepositoryAsync(string hostName, List<string> filePathsToMonitor)
+    {
+        var result = new SyncResult { HostName = hostName, SyncTime = DateTime.UtcNow };
+
+        foreach (var filePath in filePathsToMonitor)
+        {
+            try
+            {
+                // Analyze the local file
+                var localFile = await _comparer.AnalyzeFileAsync(filePath, hostName);
+
+                // Sync with repository
+                var syncedFiles = await _client.SyncFilesAsync(hostName, new List<string> { filePath });
+
+                if (syncedFiles.Any())
+                {
+                    result.UploadedFiles.Add(new FileUpdateInfo
+                    {
+                        FileName = localFile.FileName,
+                        FilePath = filePath,
+                        Action = "Uploaded",
+                        Timestamp = localFile.LastModifiedUtc,
+                        FileSize = localFile.FileSize
+                    });
+                }
+                else
+                {
+                    result.UnchangedFiles.Add(new FileUpdateInfo
+                    {
+                        FileName = localFile.FileName,
+                        FilePath = filePath,
+                        Action = "Unchanged",
+                        Timestamp = localFile.LastModifiedUtc,
+                        FileSize = localFile.FileSize
+                    });
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                result.FailedFiles.Add(new FileUpdateInfo
+                {
+                    FileName = Path.GetFileName(filePath),
+                    FilePath = filePath,
+                    Action = "Failed - File not found",
+                    Timestamp = DateTime.UtcNow,
+                    FileSize = 0
+                });
+                _logger.LogWarning("File not found during sync: {FilePath}", filePath);
+            }
+            catch (Exception ex)
+            {
+                result.FailedFiles.Add(new FileUpdateInfo
+                {
+                    FileName = Path.GetFileName(filePath),
+                    FilePath = filePath,
+                    Action = $"Failed - {ex.Message}",
+                    Timestamp = DateTime.UtcNow,
+                    FileSize = 0
+                });
+                _logger.LogError(ex, "Error syncing file: {FilePath}", filePath);
+            }
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// Check what files need to be updated on this host
+    /// </summary>
+    public async Task<UpdateCheckResult> CheckForUpdatesAsync(string hostName)
+    {
+        var result = new UpdateCheckResult { HostName = hostName, CheckTime = DateTime.UtcNow };
+
+        try
+        {
+            var updates = await _client.GetRequiredUpdatesAsync(hostName);
+
+            foreach (var kvp in updates)
+            {
+                var fileInfo = kvp.Value;
+                result.AvailableUpdates.Add(new FileUpdateInfo
+                {
+                    FileName = fileInfo.FileName,
+                    FilePath = fileInfo.FilePath,
+                    Action = "Available for download",
+                    Timestamp = fileInfo.LastModifiedUtc,
+                    FileSize = fileInfo.FileSize
+                });
+            }
+
+            _logger.LogInformation("Host {HostName} has {Count} available updates", hostName, updates.Count);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error checking for updates on host {HostName}", hostName);
+            result.ErrorMessage = ex.Message;
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// Verify that local files match the repository versions
+    /// </summary>
+    public async Task<VerificationResult> VerifyLocalFilesAsync(string hostName, List<string> filePaths)
+    {
+        var result = new VerificationResult { HostName = hostName, VerificationTime = DateTime.UtcNow };
+
+        foreach (var filePath in filePaths)
+        {
+            try
+            {
+                var matches = await _client.VerifyFileAsync(filePath, hostName);
+                var fileName = Path.GetFileName(filePath);
+
+                if (matches)
+                {
+                    result.VerifiedFiles.Add(fileName);
+                    _logger.LogInformation("File verified: {FileName}", fileName);
+                }
+                else
+                {
+                    result.MismatchedFiles.Add(new MismatchInfo
+                    {
+                        FileName = fileName,
+                        FilePath = filePath,
+                        Reason = "Hash or size mismatch with repository version"
+                    });
+                    _logger.LogWarning("File mismatch detected: {FileName}", fileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                result.FailedVerifications.Add(new MismatchInfo
+                {
+                    FileName = Path.GetFileName(filePath),
+                    FilePath = filePath,
+                    Reason = ex.Message
+                });
+                _logger.LogError(ex, "Error verifying file: {FilePath}", filePath);
+            }
+        }
+
+        return result;
+    }
+}
+
+// Result classes
+public class SyncResult
+{
+    public string HostName { get; set; } = string.Empty;
+    public DateTime SyncTime { get; set; }
+    public List<FileUpdateInfo> UploadedFiles { get; set; } = new();
+    public List<FileUpdateInfo> UnchangedFiles { get; set; } = new();
+    public List<FileUpdateInfo> FailedFiles { get; set; } = new();
+
+    public int TotalFiles => UploadedFiles.Count + UnchangedFiles.Count + FailedFiles.Count;
+    public int SuccessCount => UploadedFiles.Count + UnchangedFiles.Count;
+
+    public override string ToString()
+    {
+        return $"Sync for {HostName} at {SyncTime:O}: " +
+               $"Uploaded={UploadedFiles.Count}, Unchanged={UnchangedFiles.Count}, Failed={FailedFiles.Count}";
+    }
+}
+
+public class UpdateCheckResult
+{
+    public string HostName { get; set; } = string.Empty;
+    public DateTime CheckTime { get; set; }
+    public List<FileUpdateInfo> AvailableUpdates { get; set; } = new();
+    public string? ErrorMessage { get; set; }
+
+    public bool HasUpdates => AvailableUpdates.Any();
+
+    public override string ToString()
+    {
+        return $"Update check for {HostName}: {AvailableUpdates.Count} available" +
+               (ErrorMessage != null ? $" (Error: {ErrorMessage})" : "");
+    }
+}
+
+public class VerificationResult
+{
+    public string HostName { get; set; } = string.Empty;
+    public DateTime VerificationTime { get; set; }
+    public List<string> VerifiedFiles { get; set; } = new();
+    public List<MismatchInfo> MismatchedFiles { get; set; } = new();
+    public List<MismatchInfo> FailedVerifications { get; set; } = new();
+
+    public bool AllVerified => MismatchedFiles.Count == 0 && FailedVerifications.Count == 0;
+
+    public override string ToString()
+    {
+        return $"Verification for {HostName}: Verified={VerifiedFiles.Count}, " +
+               $"Mismatched={MismatchedFiles.Count}, Failed={FailedVerifications.Count}";
+    }
+}
+
+public class FileUpdateInfo
+{
+    public string FileName { get; set; } = string.Empty;
+    public string FilePath { get; set; } = string.Empty;
+    public string Action { get; set; } = string.Empty;
+    public DateTime Timestamp { get; set; }
+    public long FileSize { get; set; }
+}
+
+public class MismatchInfo
+{
+    public string FileName { get; set; } = string.Empty;
+    public string FilePath { get; set; } = string.Empty;
+    public string Reason { get; set; } = string.Empty;
+}

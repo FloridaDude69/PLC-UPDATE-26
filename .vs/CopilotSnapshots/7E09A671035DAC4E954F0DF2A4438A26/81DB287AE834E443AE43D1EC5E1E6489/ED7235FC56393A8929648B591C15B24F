@@ -1,0 +1,154 @@
+﻿using System.Net.Http.Json;
+using PLC_UPDATE_26.Models;
+
+namespace PLC_UPDATE_26.Utilities;
+
+/// <summary>
+/// Client utility for host computers to sync files with the PLC Update system
+/// </summary>
+public class FileUpdateClient
+{
+    private readonly HttpClient _httpClient;
+    private readonly ILogger<FileUpdateClient> _logger;
+
+    public FileUpdateClient(string serverUrl, ILogger<FileUpdateClient> logger)
+    {
+        _httpClient = new HttpClient { BaseAddress = new Uri(serverUrl) };
+        _logger = logger;
+    }
+
+    /// <summary>
+    /// Sync files from this host with the central repository
+    /// </summary>
+    public async Task<List<FileTimestampInfo>> SyncFilesAsync(string hostName, List<string> filePaths)
+    {
+        try
+        {
+            var response = await _httpClient.PostAsJsonAsync(
+                $"/api/fileupdate/sync?hostName={Uri.EscapeDataString(hostName)}",
+                filePaths);
+
+            response.EnsureSuccessStatusCode();
+            var result = await response.Content.ReadFromJsonAsync<List<FileTimestampInfo>>();
+
+            _logger.LogInformation("Successfully synced {Count} files", result?.Count ?? 0);
+            return result ?? new List<FileTimestampInfo>();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error syncing files from host {HostName}", hostName);
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Get the latest timestamp for a specific file
+    /// </summary>
+    public async Task<FileTimestampInfo?> GetLatestFileVersionAsync(string fileName)
+    {
+        try
+        {
+            var response = await _httpClient.GetAsync($"/api/fileupdate/latest/{Uri.EscapeDataString(fileName)}");
+
+            if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                return null;
+
+            response.EnsureSuccessStatusCode();
+            return await response.Content.ReadFromJsonAsync<FileTimestampInfo>();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error getting latest version for file {FileName}", fileName);
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Get all files that should be updated on this host
+    /// </summary>
+    public async Task<Dictionary<string, FileTimestampInfo>> GetRequiredUpdatesAsync(string hostName)
+    {
+        try
+        {
+            var response = await _httpClient.GetAsync(
+                $"/api/fileupdate/distribute/{Uri.EscapeDataString(hostName)}");
+
+            response.EnsureSuccessStatusCode();
+            var result = await response.Content.ReadFromJsonAsync<Dictionary<string, FileTimestampInfo>>();
+
+            _logger.LogInformation("Host {HostName} has {Count} required updates", 
+                hostName, result?.Count ?? 0);
+
+            return result ?? new Dictionary<string, FileTimestampInfo>();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error getting updates for host {HostName}", hostName);
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Get all files in the repository
+    /// </summary>
+    public async Task<List<FileTimestampInfo>> GetAllRepositoryFilesAsync()
+    {
+        try
+        {
+            var response = await _httpClient.GetAsync("/api/fileupdate/all");
+            response.EnsureSuccessStatusCode();
+            return await response.Content.ReadFromJsonAsync<List<FileTimestampInfo>>() ?? new();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error getting all repository files");
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Get all files from a specific host in the repository
+    /// </summary>
+    public async Task<List<FileTimestampInfo>> GetHostFilesAsync(string hostName)
+    {
+        try
+        {
+            var response = await _httpClient.GetAsync(
+                $"/api/fileupdate/host/{Uri.EscapeDataString(hostName)}");
+
+            response.EnsureSuccessStatusCode();
+            return await response.Content.ReadFromJsonAsync<List<FileTimestampInfo>>() ?? new();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error getting files for host {HostName}", hostName);
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Get a formatted report from the repository
+    /// </summary>
+    public async Task<string> GetRepositoryReportAsync()
+    {
+        try
+        {
+            var response = await _httpClient.GetAsync("/api/fileupdate/report");
+            response.EnsureSuccessStatusCode();
+            return await response.Content.ReadAsStringAsync();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error getting repository report");
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Dispose of resources
+    /// </summary>
+    public void Dispose()
+    {
+        _httpClient?.Dispose();
+    }
+}

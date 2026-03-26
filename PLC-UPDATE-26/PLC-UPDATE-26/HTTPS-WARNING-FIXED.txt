@@ -1,0 +1,160 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                     ✅ HTTPS WARNING FIXED ✅                               ║
+║                                                                              ║
+║              Your application now runs without warnings!                    ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔧 WHAT WAS FIXED
+
+Warning Message (Before):
+  "Failed to determine the https port for redirect"
+
+Root Cause:
+  The Program.cs file was calling `app.UseHttpsRedirection()` 
+  unconditionally, which tries to redirect HTTP to HTTPS
+  but in development mode with HTTP-only configuration,
+  it couldn't determine the HTTPS port.
+
+Solution Applied:
+  Moved `app.UseHttpsRedirection()` inside the 
+  `if (!app.Environment.IsDevelopment())` block
+  so HTTPS redirect only happens in production
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📝 CODE CHANGE
+
+Before:
+```csharp
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error", createScopeForErrors: true);
+    app.UseHsts();
+}
+app.UseStatusCodePagesWithReExecute("/not-found", createScopeForStatusCodePages: true);
+app.UseHttpsRedirection();  // ← This was running in development!
+```
+
+After:
+```csharp
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error", createScopeForErrors: true);
+    app.UseHsts();
+    app.UseHttpsRedirection();  // ← Now only runs in production
+}
+app.UseStatusCodePagesWithReExecute("/not-found", createScopeForStatusCodePages: true);
+```
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ BUILD STATUS
+
+Before Fix:      ⚠️ Build successful but with runtime warning
+After Fix:       ✅ Clean build, no warnings
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 WHAT THIS MEANS
+
+Development (HTTP):
+  ✅ No HTTPS redirect attempt
+  ✅ Uses HTTP directly (http://localhost:5034)
+  ✅ Clean startup, no warnings
+  ✅ Fast development experience
+
+Production (HTTPS):
+  ✅ HTTPS redirect enabled
+  ✅ Forces secure connection
+  ✅ HSTS headers added
+  ✅ Professional security
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 HOW TO USE
+
+Your application now runs cleanly:
+
+1. Click desktop shortcut: "PLC Update Manager"
+2. Application starts WITHOUT warnings
+3. Terminal shows: "Now listening on: http://localhost:5034"
+4. Open browser: http://localhost:5034/file-updates
+5. Enjoy the application!
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 TECHNICAL DETAILS
+
+What Changed:
+  File: Program.cs
+  Method: Middleware configuration
+  Scope: Development vs Production behavior
+
+Why:
+  In development, you use HTTP for faster iteration
+  In production, you want HTTPS for security
+  HTTPS redirect should only apply in production
+
+Impact:
+  ✓ Cleaner development experience
+  ✓ No confusing warnings
+  ✓ Still secure in production
+  ✓ Best practices followed
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✨ BENEFITS
+
+✅ No More Warnings
+   Development runs clean
+
+✅ Proper Environment Handling
+   Different configurations for dev vs production
+
+✅ Best Practices
+   Follows ASP.NET Core recommendations
+
+✅ Security
+   Production still has HTTPS redirect
+
+✅ Performance
+   Development uses HTTP (faster)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 YOU'RE ALL SET
+
+Your application:
+  ✅ Builds successfully
+  ✅ Runs without warnings
+  ✅ Graphics interface working
+  ✅ Ready to use anytime
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Next Steps:
+
+1. Run the application using your desktop shortcut
+2. Watch it start cleanly (no warnings!)
+3. Open: http://localhost:5034/file-updates
+4. Enjoy your impressive graphics interface!
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Questions?
+
+This fix ensures:
+  • Development environment is clean
+  • No confusing HTTPS warnings
+  • Production stays secure
+  • ASP.NET Core best practices followed
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Your application is now optimized and ready! 🚀✨
+
+═══════════════════════════════════════════════════════════════════════════════

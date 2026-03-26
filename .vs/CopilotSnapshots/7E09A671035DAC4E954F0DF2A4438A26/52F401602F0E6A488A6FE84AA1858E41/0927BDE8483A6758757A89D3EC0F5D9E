@@ -1,0 +1,1009 @@
+﻿@page "/file-updates"
+@using Models
+@using Services
+@inject IFileRepository Repository
+@inject IFileUpdateManager UpdateManager
+@inject IFileTimestampComparer Comparer
+@inject ILogger<FileUpdates> Logger
+
+<PageTitle>PLC Update Manager - Professional Graphics</PageTitle>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body, html {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .dashboard-container {
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 25%, #2d1b4e 50%, #1a0f3e 75%, #0a0e27 100%);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+    }
+
+    /* HEADER WITH ANIMATED BACKGROUND */
+    .header-section {
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 25%, #a0548d 50%, #764ba2 75%, #667eea 100%);
+        background-size: 200% 200%;
+        animation: gradientShift 8s ease infinite;
+        padding: 40px 50px;
+        box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+        border-bottom: 3px solid rgba(255,255,255,0.3);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .header-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        pointer-events: none;
+        opacity: 0.1;
+    }
+
+    @@keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .header-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-title {
+        font-size: 48px;
+        font-weight: 800;
+        letter-spacing: -2px;
+        text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        animation: slideInDown 1s ease-out;
+    }
+
+    .header-subtitle {
+        font-size: 14px;
+        opacity: 0.95;
+        margin-top: 8px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    @@keyframes slideInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .header-stats {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .header-stat-item {
+        text-align: center;
+        animation: slideInRight 1s ease-out 0.2s both;
+    }
+
+    .header-stat-value {
+        font-size: 36px;
+        font-weight: 700;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .header-stat-label {
+        font-size: 11px;
+        opacity: 0.85;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 5px;
+    }
+
+    @@keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* MAIN CONTENT */
+    .content-section {
+        flex: 1;
+        display: flex;
+        overflow: hidden;
+        gap: 0;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        width: 280px;
+        background: linear-gradient(180deg, #1a1a3e 0%, #0f0f2e 100%);
+        border-right: 2px solid rgba(102, 126, 234, 0.3);
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        padding: 30px 20px;
+        box-shadow: inset -2px 0 10px rgba(0,0,0,0.3);
+    }
+
+    .sidebar-title {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #667eea;
+        margin-bottom: 20px;
+        font-weight: 700;
+        text-shadow: 0 2px 5px rgba(102,126,234,0.3);
+    }
+
+    .sidebar-button {
+        padding: 16px 18px;
+        margin-bottom: 12px;
+        border: 2px solid rgba(102, 126, 234, 0.3);
+        background: rgba(102, 126, 234, 0.1);
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-align: left;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .sidebar-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s;
+    }
+
+    .sidebar-button:hover::before {
+        left: 100%;
+    }
+
+    .sidebar-button:hover {
+        background: rgba(102, 126, 234, 0.3);
+        border-color: #667eea;
+        transform: translateX(5px);
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .sidebar-button.active {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-color: #667eea;
+        box-shadow: 0 0 30px rgba(102, 126, 234, 0.6);
+        transform: translateX(8px);
+    }
+
+    /* MAIN DISPLAY */
+    .main-display {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background: radial-gradient(ellipse at top right, rgba(102,126,234,0.1) 0%, transparent 50%);
+    }
+
+    .display-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        padding: 40px;
+        overflow-y: auto;
+        animation: fadeIn 0.8s ease-out;
+    }
+
+    @@keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .stat-card-large {
+        background: linear-gradient(135deg, rgba(102,126,234,0.15) 0%, rgba(118,75,162,0.1) 100%);
+        border: 2px solid rgba(102, 126, 234, 0.4);
+        border-radius: 16px;
+        padding: 35px;
+        backdrop-filter: blur(10px);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .stat-card-large::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        animation: shimmer 3s infinite;
+    }
+
+    @@keyframes shimmer {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(50px, 50px); }
+    }
+
+    .stat-card-large:hover {
+        transform: translateY(-15px) scale(1.02);
+        border-color: #667eea;
+        box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4), inset 0 0 40px rgba(102,126,234,0.1);
+        background: linear-gradient(135deg, rgba(102,126,234,0.25) 0%, rgba(118,75,162,0.15) 100%);
+    }
+
+    .card-icon {
+        font-size: 64px;
+        margin-bottom: 20px;
+        filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.5));
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @@keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+    }
+
+    .card-title {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #e0e0ff;
+    }
+
+    .card-value {
+        font-size: 52px;
+        font-weight: 800;
+        color: #667eea;
+        margin: 20px 0;
+        text-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+    }
+
+    .card-description {
+        font-size: 13px;
+        color: #b0b0d0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* TABS SECTION */
+    .tabs-section {
+        display: flex;
+        border-top: 2px solid rgba(102, 126, 234, 0.2);
+        background: rgba(15, 15, 46, 0.5);
+        backdrop-filter: blur(10px);
+    }
+
+    .tab-nav {
+        display: flex;
+        gap: 0;
+        flex: 1;
+        overflow-x: auto;
+        border-right: 2px solid rgba(102, 126, 234, 0.2);
+    }
+
+    .tab-nav-item {
+        padding: 20px 25px;
+        border: none;
+        background: none;
+        color: #b0b0d0;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border-bottom: 3px solid transparent;
+        white-space: nowrap;
+        position: relative;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .tab-nav-item::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .tab-nav-item:hover {
+        color: #e0e0ff;
+        background: rgba(102, 126, 234, 0.1);
+    }
+
+    .tab-nav-item.active {
+        color: #667eea;
+        background: rgba(102, 126, 234, 0.15);
+    }
+
+    .tab-nav-item.active::after {
+        transform: scaleX(1);
+    }
+
+    .tab-content-area {
+        flex: 1;
+        padding: 30px 40px;
+        overflow-y: auto;
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    /* FORM STYLING */
+    .form-section {
+        background: rgba(102, 126, 234, 0.05);
+        border: 2px solid rgba(102, 126, 234, 0.3);
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 30px;
+        backdrop-filter: blur(10px);
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .form-label {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #667eea;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 5px rgba(102, 126, 234, 0.2);
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 14px 18px;
+        border: 2px solid rgba(102, 126, 234, 0.3);
+        border-radius: 8px;
+        background: rgba(15, 15, 46, 0.8);
+        color: white;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+        font-family: inherit;
+    }
+
+    .form-input:focus {
+        outline: none;
+        border-color: #667eea;
+        background: rgba(102, 126, 234, 0.1);
+        box-shadow: inset 0 2px 5px rgba(0,0,0,0.3), 0 0 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .form-input::placeholder {
+        color: #666680;
+    }
+
+    /* BUTTONS */
+    .button-group {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .btn {
+        padding: 14px 28px;
+        border: 2px solid;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        overflow: hidden;
+        font-family: inherit;
+    }
+
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: left 0.6s;
+    }
+
+    .btn:hover::before {
+        left: 100%;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-color: #667eea;
+        color: white;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+    }
+
+    .btn-secondary {
+        background: rgba(102, 126, 234, 0.2);
+        border-color: rgba(102, 126, 234, 0.5);
+        color: #e0e0ff;
+    }
+
+    .btn-secondary:hover {
+        background: rgba(102, 126, 234, 0.3);
+        border-color: #667eea;
+        transform: translateY(-2px);
+    }
+
+    /* DATA TABLE */
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .data-table thead {
+        background: rgba(102, 126, 234, 0.15);
+        border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+    }
+
+    .data-table th {
+        padding: 16px;
+        text-align: left;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #667eea;
+    }
+
+    .data-table td {
+        padding: 14px 16px;
+        border-bottom: 1px solid rgba(102, 126, 234, 0.15);
+        color: #d0d0e0;
+        font-size: 13px;
+    }
+
+    .data-table tbody tr {
+        transition: all 0.3s ease;
+    }
+
+    .data-table tbody tr:hover {
+        background: rgba(102, 126, 234, 0.1);
+        box-shadow: inset 2px 0 10px rgba(102, 126, 234, 0.2);
+    }
+
+    /* BADGES */
+    .badge {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .badge-success {
+        background: rgba(38, 176, 80, 0.2);
+        color: #26b050;
+        border: 1px solid rgba(38, 176, 80, 0.5);
+    }
+
+    .badge-info {
+        background: rgba(0, 153, 255, 0.2);
+        color: #0099ff;
+        border: 1px solid rgba(0, 153, 255, 0.5);
+    }
+
+    .badge-warning {
+        background: rgba(255, 193, 7, 0.2);
+        color: #ffc107;
+        border: 1px solid rgba(255, 193, 7, 0.5);
+    }
+
+    /* ALERTS */
+    .alert {
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border-left: 4px solid;
+        background: rgba(0,0,0,0.2);
+        backdrop-filter: blur(10px);
+        animation: slideInLeft 0.5s ease-out;
+    }
+
+    @@keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .alert-success {
+        border-left-color: #26b050;
+        color: #26b050;
+    }
+
+    .alert-error {
+        border-left-color: #ff6b6b;
+        color: #ff6b6b;
+    }
+
+    /* SCROLLBAR STYLING */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgba(102, 126, 234, 0.05);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(102, 126, 234, 0.3);
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(102, 126, 234, 0.5);
+    }
+
+    /* RESPONSIVE */
+    @@media (max-width: 1200px) {
+        .sidebar {
+            width: 220px;
+        }
+        .header-title {
+            font-size: 36px;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .content-section {
+            flex-direction: column;
+        }
+        .sidebar {
+            width: 100%;
+            border-right: none;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+            flex-direction: row;
+            overflow-x: auto;
+            padding: 15px;
+        }
+        .sidebar-button {
+            flex-shrink: 0;
+        }
+    }
+</style>
+
+<div class="dashboard-container">
+    <!-- HEADER SECTION -->
+    <div class="header-section">
+        <div class="header-content">
+            <div>
+                <div class="header-title">📊 PLC Update Manager</div>
+                <div class="header-subtitle">Professional File Timestamp Management System</div>
+            </div>
+            <div class="header-stats">
+                <div class="header-stat-item">
+                    <div class="header-stat-value">@(allTimestamps?.Count ?? 0)</div>
+                    <div class="header-stat-label">Files</div>
+                </div>
+                <div class="header-stat-item">
+                    <div class="header-stat-value">@(allTimestamps?.GroupBy(t => t.HostName).Count() ?? 0)</div>
+                    <div class="header-stat-label">Hosts</div>
+                </div>
+                <div class="header-stat-item">
+                    <div class="header-stat-value">@(distributionUpdates?.Count ?? 0)</div>
+                    <div class="header-stat-label">Updates</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content-section">
+        <!-- SIDEBAR NAVIGATION -->
+        <div class="sidebar">
+            <div class="sidebar-title">🎯 Navigation</div>
+            <button class="sidebar-button @(activeTab == "dashboard" ? "active" : "")" @onclick="() => SelectTab("dashboard")">
+                📈 Dashboard
+            </button>
+            <button class="sidebar-button @(activeTab == "sync" ? "active" : "")" @onclick="() => SelectTab("sync")">
+                ⬆️ Sync Files
+            </button>
+            <button class="sidebar-button @(activeTab == "repository" ? "active" : "")" @onclick="() => SelectTab("repository")">
+                📁 Repository
+            </button>
+            <button class="sidebar-button @(activeTab == "distribute" ? "active" : "")" @onclick="() => SelectTab("distribute")">
+                📦 Distribute
+            </button>
+            <button class="sidebar-button @(activeTab == "report" ? "active" : "")" @onclick="() => SelectTab("report")">
+                📄 Report
+            </button>
+        </div>
+
+        <!-- MAIN DISPLAY AREA -->
+        <div class="main-display">
+            <!-- DASHBOARD TAB -->
+            @if (activeTab == "dashboard")
+            {
+                <div class="display-cards">
+                    <div class="stat-card-large">
+                        <div class="card-icon">📊</div>
+                        <div class="card-title">Total Files</div>
+                        <div class="card-value">@(allTimestamps?.Count ?? 0)</div>
+                        <div class="card-description">Files Tracked in Repository</div>
+                    </div>
+
+                    <div class="stat-card-large">
+                        <div class="card-icon">🖥️</div>
+                        <div class="card-title">Connected Hosts</div>
+                        <div class="card-value">@(allTimestamps?.GroupBy(t => t.HostName).Count() ?? 0)</div>
+                        <div class="card-description">Active Synchronization Points</div>
+                    </div>
+
+                    <div class="stat-card-large">
+                        <div class="card-icon">📦</div>
+                        <div class="card-title">Pending Updates</div>
+                        <div class="card-value">@(distributionUpdates?.Count ?? 0)</div>
+                        <div class="card-description">Files Requiring Distribution</div>
+                    </div>
+
+                    <div class="stat-card-large">
+                        <div class="card-icon">⚡</div>
+                        <div class="card-title">System Status</div>
+                        <div class="card-value">🟢 Active</div>
+                        <div class="card-description">All Systems Operational</div>
+                    </div>
+                </div>
+            }
+
+            <!-- SYNC FILES TAB -->
+            @if (activeTab == "sync")
+            {
+                <div class="tab-content-area">
+                    <h2 style="color: #e0e0ff; margin-bottom: 30px; font-size: 28px;">Sync Files from Host</h2>
+
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label class="form-label">Host Name</label>
+                            <input type="text" class="form-input" @bind="hostName" placeholder="e.g., MACHINE-01" />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">File Path</label>
+                            <input type="text" class="form-input" @bind="filePath" placeholder="e.g., C:\Program Files\MyApp\config.ini" />
+                        </div>
+
+                        <div class="button-group">
+                            <button class="btn btn-primary" @onclick="AddFileToSync">+ Add File</button>
+                            <button class="btn btn-primary" @onclick="SyncSelectedFiles" disabled="@(!filesToSync.Any())">
+                                ✓ Sync @filesToSync.Count File(s)
+                            </button>
+                            <button class="btn btn-secondary" @onclick="ClearFilesToSync" disabled="@(!filesToSync.Any())">
+                                Clear List
+                            </button>
+                        </div>
+                    </div>
+
+                    @if (filesToSync.Any())
+                    {
+                        <div class="form-section">
+                            <h3 style="color: #e0e0ff; margin-bottom: 20px;">📋 Files to Sync (@filesToSync.Count)</h3>
+                            @foreach (var file in filesToSync)
+                            {
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: rgba(0,0,0,0.2); border-radius: 6px; margin-bottom: 10px;">
+                                    <span>📄 @file</span>
+                                    <button class="btn btn-secondary" @onclick="() => filesToSync.Remove(file)" style="padding: 8px 16px; font-size: 12px;">Remove</button>
+                                </div>
+                            }
+                        </div>
+                    }
+
+                    @if (syncedFiles.Any())
+                    {
+                        <div class="alert alert-success">
+                            <h4>✅ Sync Completed Successfully</h4>
+                            <p>@syncedFiles.Count file(s) synced</p>
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(syncError))
+                    {
+                        <div class="alert alert-error">
+                            <strong>❌ Error:</strong> @syncError
+                        </div>
+                    }
+                </div>
+            }
+
+            <!-- REPOSITORY TAB -->
+            @if (activeTab == "repository")
+            {
+                <div class="tab-content-area">
+                    <h2 style="color: #e0e0ff; margin-bottom: 30px; font-size: 28px;">File Repository</h2>
+
+                    <button class="btn btn-primary" @onclick="LoadRepository" style="margin-bottom: 30px;">🔄 Refresh Repository</button>
+
+                    @if (allTimestamps == null)
+                    {
+                        <div style="text-align: center; padding: 60px; color: #999;">
+                            <div style="font-size: 48px; margin-bottom: 20px; animation: spin 2s linear infinite;">⏳</div>
+                            <p>Loading repository...</p>
+                        </div>
+                    }
+                    else if (!allTimestamps.Any())
+                    {
+                        <div style="text-align: center; padding: 60px; color: #666;">
+                            <div style="font-size: 64px; margin-bottom: 20px;">📭</div>
+                            <h3>No Files in Repository</h3>
+                            <p>Start by syncing files from your host computers</p>
+                        </div>
+                    }
+                    else
+                    {
+                        var groupedByFile = allTimestamps
+                            .GroupBy(t => t.FileName, StringComparer.OrdinalIgnoreCase)
+                            .OrderBy(g => g.Key)
+                            .ToList();
+
+                        @foreach (var fileGroup in groupedByFile)
+                        {
+                            var latest = fileGroup.OrderByDescending(t => t.LastModifiedUtc).First();
+                            <div style="background: rgba(102,126,234,0.1); border: 2px solid rgba(102,126,234,0.3); border-radius: 10px; padding: 20px; margin-bottom: 20px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                                    <h4 style="margin: 0; color: #e0e0ff;">📄 @fileGroup.Key</h4>
+                                    <span class="badge badge-success">Latest</span>
+                                </div>
+                                <table class="data-table">
+                                    <tr>
+                                        <td><strong>Host:</strong></td>
+                                        <td>@latest.HostName</td>
+                                        <td style="padding-left: 30px;"><strong>Modified:</strong></td>
+                                        <td>@latest.LastModifiedUtc.ToString("g")</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Size:</strong></td>
+                                        <td>@FormatBytes(latest.FileSize)</td>
+                                        <td style="padding-left: 30px;"><strong>Hash:</strong></td>
+                                        <td><code style="color: #667eea;">@latest.Sha256Hash.Substring(0, Math.Min(16, latest.Sha256Hash.Length))...</code></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        }
+                    }
+                </div>
+            }
+
+            <!-- DISTRIBUTE TAB -->
+            @if (activeTab == "distribute")
+            {
+                <div class="tab-content-area">
+                    <h2 style="color: #e0e0ff; margin-bottom: 30px; font-size: 28px;">Distribute Updates</h2>
+
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label class="form-label">Target Host Name</label>
+                            <input type="text" class="form-input" @bind="targetHostName" placeholder="e.g., MACHINE-02" />
+                        </div>
+
+                        <button class="btn btn-primary" @onclick="GetDistributionUpdates">🔍 Check Updates</button>
+                    </div>
+
+                    @if (distributionUpdates != null && distributionUpdates.Any())
+                    {
+                        <div class="alert alert-success">
+                            <h4>📦 @distributionUpdates.Count Files Ready for Distribution</h4>
+
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>File Name</th>
+                                        <th>From Host</th>
+                                        <th>Modified</th>
+                                        <th>Size</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var kvp in distributionUpdates)
+                                    {
+                                        var file = kvp.Value;
+                                        <tr>
+                                            <td><strong>@file.FileName</strong></td>
+                                            <td><span class="badge badge-info">@file.HostName</span></td>
+                                            <td>@file.LastModifiedUtc.ToString("g")</td>
+                                            <td>@FormatBytes(file.FileSize)</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else if (distributionUpdates != null)
+                    {
+                        <div class="alert alert-success">
+                            ✅ Host is already up to date with all latest versions
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(distributeError))
+                    {
+                        <div class="alert alert-error">
+                            <strong>❌ Error:</strong> @distributeError
+                        </div>
+                    }
+                </div>
+            }
+
+            <!-- REPORT TAB -->
+            @if (activeTab == "report")
+            {
+                <div class="tab-content-area">
+                    <h2 style="color: #e0e0ff; margin-bottom: 30px; font-size: 28px;">Repository Report</h2>
+
+                    <button class="btn btn-primary" @onclick="GenerateReport" style="margin-bottom: 30px;">📋 Generate Report</button>
+
+                    @if (!string.IsNullOrEmpty(reportText))
+                    {
+                        <div style="background: rgba(0,0,0,0.3); border: 2px solid rgba(102,126,234,0.3); border-radius: 10px; padding: 25px;">
+                            <pre style="margin: 0; color: #d0d0e0; font-size: 12px; font-family: 'Courier New', monospace; white-space: pre-wrap; word-wrap: break-word; line-height: 1.6;">@reportText</pre>
+                        </div>
+                    }
+                    else
+                    {
+                        <div style="text-align: center; padding: 60px; color: #666;">
+                            <div style="font-size: 64px; margin-bottom: 20px;">📄</div>
+                            <p>Click "Generate Report" to create a repository report</p>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@@code {
+    private string hostName = "";
+    private string filePath = "";
+    private string targetHostName = "";
+    private string activeTab = "dashboard";
+
+    private List<string> filesToSync = new();
+    private List<FileTimestampInfo> syncedFiles = new();
+    private List<FileTimestampInfo>? allTimestamps;
+    private Dictionary<string, FileTimestampInfo>? distributionUpdates;
+    private string? syncError;
+    private string? distributeError;
+    private string reportText = "";
+
+    private void SelectTab(string tab) => activeTab = tab;
+
+    private void AddFileToSync()
+    {
+        if (!string.IsNullOrEmpty(filePath) && !filesToSync.Contains(filePath))
+        {
+            filesToSync.Add(filePath);
+            filePath = "";
+        }
+    }
+
+    private void ClearFilesToSync() => filesToSync.Clear();
+
+    private async Task SyncSelectedFiles()
+    {
+        if (string.IsNullOrEmpty(hostName))
+        {
+            syncError = "Please enter a host name";
+            return;
+        }
+
+        try
+        {
+            syncError = null;
+            syncedFiles = await UpdateManager.SyncHostFilesAsync(hostName, filesToSync.ToList());
+            filesToSync.Clear();
+            await LoadRepository();
+        }
+        catch (Exception ex)
+        {
+            syncError = $"Error during sync: {ex.Message}";
+            Logger.LogError(ex, "Sync error");
+        }
+    }
+
+    private async Task LoadRepository()
+    {
+        allTimestamps = await Repository.GetAllTimestampsAsync();
+    }
+
+    private async Task GetDistributionUpdates()
+    {
+        if (string.IsNullOrEmpty(targetHostName))
+        {
+            distributeError = "Please enter a target host name";
+            return;
+        }
+
+        try
+        {
+            distributeError = null;
+            distributionUpdates = await UpdateManager.DistributeLatestFilesAsync(targetHostName);
+        }
+        catch (Exception ex)
+        {
+            distributeError = $"Error: {ex.Message}";
+            Logger.LogError(ex, "Distribution error");
+        }
+    }
+
+    private async Task GenerateReport()
+    {
+        reportText = await Repository.GenerateRepositoryReportAsync();
+    }
+
+    private static string FormatBytes(long bytes)
+    {
+        string[] sizes = { "B", "KB", "MB", "GB", "TB" };
+        double len = bytes;
+        int order = 0;
+        while (len >= 1024 && order < sizes.Length - 1)
+        {
+            order++;
+            len = len / 1024;
+        }
+
+        return $"{len:0.##} {sizes[order]}";
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadRepository();
+    }
+}

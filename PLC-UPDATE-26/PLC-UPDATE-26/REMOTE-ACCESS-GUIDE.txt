@@ -1,0 +1,217 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║              🌐 REMOTE ACCESS SETUP - NETWORK CONNECTION 🌐                 ║
+║                                                                              ║
+║         Access Your Application from Any Computer on Your Network!          ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 WHAT WAS CREATED
+
+Desktop Shortcut:    "PLC Update Manager - Network.bat"
+Launch Profile:      "network" (added to launchSettings.json)
+Binding Address:     http://0.0.0.0:5034 (all network interfaces)
+Port:                5034
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 HOW TO START NETWORK MODE
+
+STEP 1: Double-click "PLC Update Manager - Network.bat" on your desktop
+
+STEP 2: The batch file will:
+        ✓ Start the application in network mode
+        ✓ Display your computer's IP address(es)
+        ✓ Open a local browser window
+        ✓ Show connection instructions
+
+STEP 3: Note your IPv4 address (shown in the window)
+        Example: 10.0.1.45 or 192.168.1.100
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🖥️ CONNECTING FROM ANOTHER COMPUTER
+
+On the OTHER computer's browser, go to:
+
+    http://YOUR-IP-ADDRESS:5034/file-updates
+
+Replace YOUR-IP-ADDRESS with your computer's actual IPv4 address.
+
+EXAMPLES:
+    http://10.0.1.45:5034/file-updates
+    http://192.168.1.100:5034/file-updates
+    http://172.16.0.50:5034/file-updates
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📋 STEP-BY-STEP: FIND YOUR IP ADDRESS
+
+If you need to find your IP address manually:
+
+METHOD 1 - From the Batch File:
+    The batch file displays your IP automatically when you run it.
+
+METHOD 2 - Command Prompt:
+    1. Press Windows + R
+    2. Type: cmd
+    3. Press Enter
+    4. Type: ipconfig
+    5. Look for "IPv4 Address" under your network adapter
+       Example: IPv4 Address. . . . . . . . . . . : 10.0.1.45
+
+METHOD 3 - Settings:
+    1. Open Windows Settings
+    2. Go to: Network & Internet
+    3. Click on your connection (WiFi or Ethernet)
+    4. Scroll down to see your IPv4 address
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⚠️ IMPORTANT: WINDOWS FIREWALL
+
+The first time you run network mode, Windows Firewall may prompt you:
+
+    "Windows Defender Firewall has blocked some features of this app"
+
+Click "Allow access" to enable network connections.
+
+If the prompt doesn't appear but connections don't work:
+
+OPTION 1 - Allow through Firewall (recommended):
+    1. Open Windows Defender Firewall
+    2. Click "Allow an app or feature through Windows Defender Firewall"
+    3. Click "Change settings"
+    4. Click "Allow another app..."
+    5. Browse to: C:\Program Files\dotnet\dotnet.exe
+    6. Check both "Private" and "Public" boxes
+    7. Click OK
+
+OPTION 2 - Create Firewall Rule manually:
+    Run this PowerShell command as Administrator:
+
+    New-NetFirewallRule -DisplayName "PLC Update Manager" -Direction Inbound -Protocol TCP -LocalPort 5034 -Action Allow
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔍 TROUBLESHOOTING
+
+ISSUE: Other computer can't connect
+SOLUTIONS:
+    ✓ Make sure both computers are on the same network
+    ✓ Check Windows Firewall settings (see above)
+    ✓ Verify you're using the correct IP address
+    ✓ Make sure the application is running
+    ✓ Try disabling VPN if connected
+
+ISSUE: "Connection refused" error
+SOLUTIONS:
+    ✓ Make sure the application is started
+    ✓ Wait a few more seconds for startup
+    ✓ Check the command window for errors
+    ✓ Verify port 5034 is not blocked
+
+ISSUE: "This site can't be reached" 
+SOLUTIONS:
+    ✓ Double-check the IP address
+    ✓ Make sure you typed :5034 (with the port)
+    ✓ Try http:// not https://
+    ✓ Check if computers are on same network
+
+ISSUE: Firewall keeps blocking
+SOLUTIONS:
+    ✓ Run the firewall rule command above
+    ✓ Temporarily disable firewall to test
+    ✓ Check corporate network policies
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 TWO LAUNCH OPTIONS
+
+You now have TWO shortcuts on your desktop:
+
+1. "PLC Update Manager" (original)
+   → Local-only access
+   → URL: http://localhost:5034/file-updates
+   → For use on THIS computer only
+
+2. "PLC Update Manager - Network" (new)
+   → Network-wide access
+   → URL: http://YOUR-IP:5034/file-updates
+   → For use from ANY computer on network
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🌐 QUICK REFERENCE
+
+TO ACCESS LOCALLY (this computer):
+    http://localhost:5034/file-updates
+
+TO ACCESS REMOTELY (other computers):
+    http://YOUR-IP-ADDRESS:5034/file-updates
+
+TO FIND YOUR IP:
+    Run: ipconfig
+    Look for: IPv4 Address
+
+TO ALLOW FIREWALL:
+    PowerShell (Admin):
+    New-NetFirewallRule -DisplayName "PLC Update Manager" -Direction Inbound -Protocol TCP -LocalPort 5034 -Action Allow
+
+═══════════════════════════════════════════════════════════════════════════════
+
+💻 EXAMPLE SCENARIO
+
+Your computer's IP: 10.0.1.45
+
+On YOUR computer:
+    Browser → http://localhost:5034/file-updates  ✅
+    Browser → http://10.0.1.45:5034/file-updates  ✅
+
+On ANOTHER computer (same network):
+    Browser → http://10.0.1.45:5034/file-updates  ✅
+
+On a computer NOT on your network:
+    ❌ Will NOT work (different network)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔒 SECURITY NOTES
+
+✓ Only computers on your local network can access
+✓ This is NOT accessible from the internet
+✓ No special security risks for internal testing
+✓ Close the application when done testing
+
+For internet access (not recommended without proper security):
+    → Would require port forwarding on router
+    → Would require proper HTTPS/SSL certificates
+    → Would require authentication
+    → Better to use a proper deployment solution
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ SUMMARY
+
+What You Need To Do:
+
+1. Double-click "PLC Update Manager - Network" on desktop
+2. Note your IPv4 address from the window
+3. On other computer, open browser to:
+   http://YOUR-IP:5034/file-updates
+4. Allow firewall if prompted
+5. Both computers see the same interface!
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎉 YOU'RE READY FOR REMOTE TESTING!
+
+Desktop shortcuts available:
+    ✅ "PLC Update Manager" - Local only
+    ✅ "PLC Update Manager - Network" - Remote access
+
+Just run the Network version and share your IP address with the other computer!
+
+═══════════════════════════════════════════════════════════════════════════════

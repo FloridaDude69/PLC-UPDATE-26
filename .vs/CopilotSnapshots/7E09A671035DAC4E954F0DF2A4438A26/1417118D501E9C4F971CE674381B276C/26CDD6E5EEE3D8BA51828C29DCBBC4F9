@@ -1,0 +1,710 @@
+﻿@page "/file-updates"
+@using Models
+@using Services
+@inject IFileRepository Repository
+@inject IFileUpdateManager UpdateManager
+@inject IFileTimestampComparer Comparer
+@inject ILogger<FileUpdates> Logger
+
+<PageTitle>PLC Update Manager - Professional Graphics</PageTitle>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .dashboard-container {
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 25%, #2d1b4e 50%, #1a0f3e 75%, #0a0e27 100%);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+    }
+
+    /* ANIMATED HEADER */
+    .header-section {
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 25%, #a0548d 50%, #764ba2 75%, #667eea 100%);
+        background-size: 200% 200%;
+        animation: gradientShift 8s ease infinite;
+        padding: clamp(20px, 5vw, 50px);
+        box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+        border-bottom: 3px solid rgba(255,255,255,0.3);
+        position: relative;
+        overflow: hidden;
+    }
+
+    @@keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .header-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .header-title {
+        font-size: clamp(28px, 6vw, 48px);
+        font-weight: 800;
+        letter-spacing: -2px;
+        text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .header-subtitle {
+        font-size: clamp(11px, 2vw, 14px);
+        opacity: 0.95;
+        margin-top: 8px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .header-stats {
+        display: flex;
+        gap: clamp(15px, 3vw, 40px);
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .header-stat-item {
+        text-align: center;
+    }
+
+    .header-stat-value {
+        font-size: clamp(24px, 4vw, 36px);
+        font-weight: 700;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .header-stat-label {
+        font-size: clamp(10px, 1.5vw, 11px);
+        opacity: 0.85;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 5px;
+    }
+
+    /* CONTENT AREA */
+    .content-section {
+        flex: 1;
+        display: flex;
+        overflow: hidden;
+        gap: 0;
+    }
+
+    .sidebar {
+        width: clamp(220px, 20vw, 280px);
+        background: linear-gradient(180deg, #1a1a3e 0%, #0f0f2e 100%);
+        border-right: 2px solid rgba(102, 126, 234, 0.3);
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        padding: clamp(15px, 3vw, 30px);
+        min-width: 200px;
+    }
+
+    .sidebar-title {
+        font-size: clamp(10px, 1.5vw, 12px);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #667eea;
+        margin-bottom: clamp(12px, 2vw, 20px);
+        font-weight: 700;
+    }
+
+    .sidebar-button {
+        padding: clamp(12px, 2vw, 16px) clamp(12px, 2vw, 18px);
+        margin-bottom: clamp(8px, 1vw, 12px);
+        border: 2px solid rgba(102, 126, 234, 0.3);
+        background: rgba(102, 126, 234, 0.1);
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: clamp(11px, 1.5vw, 13px);
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-align: left;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .sidebar-button:hover {
+        background: rgba(102, 126, 234, 0.3);
+        border-color: #667eea;
+        transform: translateX(5px);
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .sidebar-button.active {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-color: #667eea;
+        box-shadow: 0 0 30px rgba(102, 126, 234, 0.6);
+        transform: translateX(8px);
+    }
+
+    .main-display {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background: radial-gradient(ellipse at top right, rgba(102,126,234,0.1) 0%, transparent 50%);
+    }
+
+    .display-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 25vw, 350px), 1fr));
+        gap: clamp(15px, 3vw, 25px);
+        padding: clamp(20px, 5vw, 40px);
+        overflow-y: auto;
+    }
+
+    .stat-card-large {
+        background: linear-gradient(135deg, rgba(102,126,234,0.15) 0%, rgba(118,75,162,0.1) 100%);
+        border: 2px solid rgba(102, 126, 234, 0.4);
+        border-radius: 16px;
+        padding: clamp(20px, 4vw, 35px);
+        backdrop-filter: blur(10px);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        min-height: auto;
+    }
+
+    .stat-card-large::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        animation: shimmer 3s infinite;
+    }
+
+    @@keyframes shimmer {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(50px, 50px); }
+    }
+
+    .stat-card-large:hover {
+        transform: translateY(-15px) scale(1.02);
+        border-color: #667eea;
+        box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4), inset 0 0 40px rgba(102,126,234,0.1);
+        background: linear-gradient(135deg, rgba(102,126,234,0.25) 0%, rgba(118,75,162,0.15) 100%);
+    }
+
+    .card-icon {
+        font-size: clamp(40px, 8vw, 64px);
+        margin-bottom: clamp(12px, 2vw, 20px);
+        filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.5));
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @@keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+    }
+
+    .card-title {
+        font-size: clamp(16px, 3vw, 22px);
+        font-weight: 700;
+        margin-bottom: clamp(8px, 1.5vw, 12px);
+        color: #e0e0ff;
+    }
+
+    .card-value {
+        font-size: clamp(36px, 7vw, 52px);
+        font-weight: 800;
+        color: #667eea;
+        margin: clamp(12px, 2vw, 20px) 0;
+        text-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+    }
+
+    .card-description {
+        font-size: clamp(11px, 1.5vw, 13px);
+        color: #b0b0d0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .tab-content-area {
+        flex: 1;
+        padding: 40px;
+        overflow-y: auto;
+    }
+
+    .form-section {
+        background: rgba(102, 126, 234, 0.05);
+        border: 2px solid rgba(102, 126, 234, 0.3);
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 30px;
+        backdrop-filter: blur(10px);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #667eea;
+        margin-bottom: 8px;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid rgba(102, 126, 234, 0.3);
+        border-radius: 8px;
+        background: rgba(15, 15, 46, 0.8);
+        color: white;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        font-family: inherit;
+    }
+
+    .form-input:focus {
+        outline: none;
+        border-color: #667eea;
+        background: rgba(102, 126, 234, 0.1);
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn {
+        padding: 12px 24px;
+        border: 2px solid;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-family: inherit;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-color: #667eea;
+        color: white;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+    }
+
+    .btn-secondary {
+        background: rgba(102, 126, 234, 0.2);
+        border-color: rgba(102, 126, 234, 0.5);
+        color: #e0e0ff;
+    }
+
+    .btn-secondary:hover {
+        background: rgba(102, 126, 234, 0.3);
+        border-color: #667eea;
+        transform: translateY(-2px);
+    }
+
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .data-table thead {
+        background: rgba(102, 126, 234, 0.15);
+        border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+    }
+
+    .data-table th {
+        padding: 12px;
+        text-align: left;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #667eea;
+    }
+
+    .data-table td {
+        padding: 12px;
+        border-bottom: 1px solid rgba(102, 126, 234, 0.15);
+        color: #d0d0e0;
+        font-size: 13px;
+    }
+
+    .data-table tbody tr:hover {
+        background: rgba(102, 126, 234, 0.1);
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .badge-success {
+        background: rgba(38, 176, 80, 0.2);
+        color: #26b050;
+        border: 1px solid rgba(38, 176, 80, 0.5);
+    }
+
+    .badge-info {
+        background: rgba(0, 153, 255, 0.2);
+        color: #0099ff;
+        border: 1px solid rgba(0, 153, 255, 0.5);
+    }
+
+    .alert {
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border-left: 4px solid;
+        background: rgba(0,0,0,0.2);
+        backdrop-filter: blur(10px);
+    }
+
+    .alert-success {
+        border-left-color: #26b050;
+        color: #26b050;
+    }
+
+    .alert-error {
+        border-left-color: #ff6b6b;
+        color: #ff6b6b;
+    }
+
+    h2, h3, h4 {
+        color: #e0e0ff;
+        margin-bottom: 20px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgba(102, 126, 234, 0.05);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(102, 126, 234, 0.3);
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(102, 126, 234, 0.5);
+    }
+</style>
+
+<div class="dashboard-container">
+    <div class="header-section">
+        <div class="header-content">
+            <div>
+                <div class="header-title">📊 PLC Update Manager</div>
+                <div class="header-subtitle">Professional File Timestamp Management System</div>
+            </div>
+            <div class="header-stats">
+                <div class="header-stat-item">
+                    <div class="header-stat-value">@(stats?.TotalFiles ?? 0)</div>
+                    <div class="header-stat-label">Files</div>
+                </div>
+                <div class="header-stat-item">
+                    <div class="header-stat-value">@(stats?.HostCount ?? 0)</div>
+                    <div class="header-stat-label">Hosts</div>
+                </div>
+                <div class="header-stat-item">
+                    <div class="header-stat-value">@(stats?.PendingUpdates ?? 0)</div>
+                    <div class="header-stat-label">Updates</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="sidebar">
+            <div class="sidebar-title">🎯 Navigation</div>
+            <button class="sidebar-button @(activeTab == "dashboard" ? "active" : "")" @onclick="() => SetTab("dashboard")">📈 Dashboard</button>
+            <button class="sidebar-button @(activeTab == "sync" ? "active" : "")" @onclick="() => SetTab("sync")">⬆️ Sync Files</button>
+            <button class="sidebar-button @(activeTab == "repository" ? "active" : "")" @onclick="() => SetTab("repository")">📁 Repository</button>
+            <button class="sidebar-button @(activeTab == "distribute" ? "active" : "")" @onclick="() => SetTab("distribute")">📦 Distribute</button>
+            <button class="sidebar-button @(activeTab == "report" ? "active" : "")" @onclick="() => SetTab("report")">📄 Report</button>
+        </div>
+
+        <div class="main-display">
+            @if (activeTab == "dashboard")
+            {
+                <div class="display-cards">
+                    <div class="stat-card-large">
+                        <div class="card-icon">📊</div>
+                        <div class="card-title">Total Files</div>
+                        <div class="card-value">@(stats?.TotalFiles ?? 0)</div>
+                        <div class="card-description">Files Tracked in Repository</div>
+                    </div>
+
+                    <div class="stat-card-large">
+                        <div class="card-icon">🖥️</div>
+                        <div class="card-title">Connected Hosts</div>
+                        <div class="card-value">@(stats?.HostCount ?? 0)</div>
+                        <div class="card-description">Active Synchronization Points</div>
+                    </div>
+
+                    <div class="stat-card-large">
+                        <div class="card-icon">📦</div>
+                        <div class="card-title">Pending Updates</div>
+                        <div class="card-value">@(stats?.PendingUpdates ?? 0)</div>
+                        <div class="card-description">Files Requiring Distribution</div>
+                    </div>
+
+                    <div class="stat-card-large">
+                        <div class="card-icon">⚡</div>
+                        <div class="card-title">System Status</div>
+                        <div class="card-value">🟢 Active</div>
+                        <div class="card-description">All Systems Operational</div>
+                    </div>
+                </div>
+            }
+            else if (activeTab == "sync")
+            {
+                <div class="tab-content-area">
+                    <h2>Sync Files from Host</h2>
+
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label class="form-label">Host Name</label>
+                            <input type="text" class="form-input" @bind="hostName" placeholder="e.g., MACHINE-01" />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">File Path</label>
+                            <input type="text" class="form-input" @bind="filePath" placeholder="e.g., C:\Program Files\config.ini" />
+                        </div>
+
+                        <div style="display: flex; gap: 15px;">
+                            <button class="btn btn-primary" @onclick="AddFileToSync">+ Add File</button>
+                            <button class="btn btn-primary" @onclick="SyncFiles" disabled="@(!filesToSync.Any())">✓ Sync</button>
+                            <button class="btn btn-secondary" @onclick="ClearFiles" disabled="@(!filesToSync.Any())">Clear</button>
+                        </div>
+                    </div>
+
+                    @if (filesToSync.Any())
+                    {
+                        <div class="form-section">
+                            <h3>Files to Sync (@filesToSync.Count)</h3>
+                            @foreach (var file in filesToSync)
+                            {
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: rgba(0,0,0,0.2); border-radius: 6px; margin-bottom: 8px;">
+                                    <span>📄 @file</span>
+                                    <button class="btn btn-secondary" @onclick="() => filesToSync.Remove(file)" style="padding: 6px 12px; font-size: 11px;">Remove</button>
+                                </div>
+                            }
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(message))
+                    {
+                        <div class="alert alert-success">✅ @message</div>
+                    }
+                </div>
+            }
+            else if (activeTab == "repository")
+            {
+                <div class="tab-content-area">
+                    <h2>File Repository</h2>
+                    <button class="btn btn-primary" @onclick="LoadRepository" style="margin-bottom: 30px;">🔄 Refresh</button>
+
+                    @if (allFiles == null)
+                    {
+                        <div style="text-align: center; padding: 60px; color: #999;">Loading...</div>
+                    }
+                    else if (!allFiles.Any())
+                    {
+                        <div style="text-align: center; padding: 60px; color: #666;">No files in repository</div>
+                    }
+                    else
+                    {
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>File Name</th>
+                                    <th>Host</th>
+                                    <th>Modified</th>
+                                    <th>Size</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var file in allFiles.OrderBy(f => f.FileName))
+                                {
+                                    <tr>
+                                        <td><strong>@file.FileName</strong></td>
+                                        <td><span class="badge badge-info">@file.HostName</span></td>
+                                        <td>@file.LastModifiedUtc.ToString("g")</td>
+                                        <td>@FormatBytes(file.FileSize)</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                </div>
+            }
+            else if (activeTab == "distribute")
+            {
+                <div class="tab-content-area">
+                    <h2>Distribute Updates</h2>
+
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label class="form-label">Target Host Name</label>
+                            <input type="text" class="form-input" @bind="targetHost" placeholder="e.g., MACHINE-02" />
+                        </div>
+
+                        <button class="btn btn-primary" @onclick="CheckUpdates">🔍 Check Updates</button>
+                    </div>
+
+                    @if (updatesAvailable != null && updatesAvailable.Any())
+                    {
+                        <div class="alert alert-success">
+                            <h4>📦 @updatesAvailable.Count Files Ready for Distribution</h4>
+                        </div>
+                    }
+                </div>
+            }
+            else if (activeTab == "report")
+            {
+                <div class="tab-content-area">
+                    <h2>Repository Report</h2>
+                    <button class="btn btn-primary" @onclick="GenerateReport" style="margin-bottom: 30px;">📋 Generate Report</button>
+
+                    @if (!string.IsNullOrEmpty(reportContent))
+                    {
+                        <div style="background: rgba(0,0,0,0.3); border: 2px solid rgba(102,126,234,0.3); border-radius: 10px; padding: 25px;">
+                            <pre style="margin: 0; color: #d0d0e0; font-size: 12px; white-space: pre-wrap;">@reportContent</pre>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private string activeTab = "dashboard";
+    private string hostName = "";
+    private string filePath = "";
+    private string targetHost = "";
+    private string message = "";
+    private string reportContent = "";
+
+    private List<string> filesToSync = new();
+    private List<FileTimestampInfo>? allFiles;
+    private List<FileTimestampInfo>? updatesAvailable;
+
+    private DashboardStats stats = new();
+
+    private class DashboardStats
+    {
+        public int TotalFiles { get; set; }
+        public int HostCount { get; set; }
+        public int PendingUpdates { get; set; }
+    }
+
+    private void SetTab(string tab) => activeTab = tab;
+
+    private void AddFileToSync()
+    {
+        if (!string.IsNullOrEmpty(filePath) && !filesToSync.Contains(filePath))
+        {
+            filesToSync.Add(filePath);
+            filePath = "";
+        }
+    }
+
+    private void ClearFiles() => filesToSync.Clear();
+
+    private async Task SyncFiles()
+    {
+        if (string.IsNullOrEmpty(hostName)) return;
+        try
+        {
+            var result = await UpdateManager.SyncHostFilesAsync(hostName, filesToSync.ToList());
+            message = $"Successfully synced {result.Count} files";
+            filesToSync.Clear();
+            await LoadRepository();
+        }
+        catch (Exception ex)
+        {
+            message = $"Error: {ex.Message}";
+        }
+    }
+
+    private async Task LoadRepository()
+    {
+        allFiles = await Repository.GetAllTimestampsAsync();
+        if (allFiles != null)
+        {
+            stats.TotalFiles = allFiles.Count;
+            stats.HostCount = allFiles.GroupBy(f => f.HostName).Count();
+        }
+    }
+
+    private async Task CheckUpdates()
+    {
+        if (string.IsNullOrEmpty(targetHost)) return;
+        try
+        {
+            var updates = await UpdateManager.DistributeLatestFilesAsync(targetHost);
+            updatesAvailable = updates?.Values.ToList();
+            stats.PendingUpdates = updatesAvailable?.Count ?? 0;
+        }
+        catch (Exception ex)
+        {
+            message = $"Error: {ex.Message}";
+        }
+    }
+
+    private async Task GenerateReport()
+    {
+        reportContent = await Repository.GenerateRepositoryReportAsync();
+    }
+
+    private static string FormatBytes(long bytes)
+    {
+        string[] sizes = { "B", "KB", "MB", "GB", "TB" };
+        double len = bytes;
+        int order = 0;
+        while (len >= 1024 && order < sizes.Length - 1)
+        {
+            order++;
+            len = len / 1024;
+        }
+        return $"{len:0.##} {sizes[order]}";
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadRepository();
+    }
+}

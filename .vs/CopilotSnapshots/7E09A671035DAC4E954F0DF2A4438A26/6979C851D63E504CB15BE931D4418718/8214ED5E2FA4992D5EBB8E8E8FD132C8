@@ -1,0 +1,332 @@
+﻿@page "/file-updates"
+@using PLC_UPDATE_26.Models
+@using PLC_UPDATE_26.Services
+@inject IFileRepository Repository
+@inject IFileUpdateManager UpdateManager
+@inject IFileTimestampComparer Comparer
+@inject ILogger<FileUpdates> Logger
+
+<PageTitle>File Updates</PageTitle>
+
+<div class="container-fluid mt-5">
+    <h1>PLC Update Manager</h1>
+
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link active" id="sync-tab" data-bs-toggle="tab" data-bs-target="#sync" type="button" role="tab">
+                Sync Files
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="repository-tab" data-bs-toggle="tab" data-bs-target="#repository" type="button" role="tab">
+                Repository
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="distribute-tab" data-bs-toggle="tab" data-bs-target="#distribute" type="button" role="tab">
+                Distribute Updates
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="report-tab" data-bs-toggle="tab" data-bs-target="#report" type="button" role="tab">
+                Repository Report
+            </button>
+        </li>
+    </ul>
+
+    <div class="tab-content mt-3">
+        <!-- Sync Tab -->
+        <div class="tab-pane fade show active" id="sync" role="tabpanel">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Sync Files from Host Computer</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Host Name</label>
+                        <input type="text" class="form-control" @bind="hostName" placeholder="e.g., MACHINE-01">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">File Path</label>
+                        <input type="text" class="form-control" @bind="filePath" placeholder="e.g., C:\Program Files\MyApp\config.ini">
+                    </div>
+
+                    <button class="btn btn-primary" @onclick="AddFileToSync">Add File</button>
+                    <button class="btn btn-success" @onclick="SyncSelectedFiles" disabled="@(!filesToSync.Any())">
+                        Sync @filesToSync.Count File(s)
+                    </button>
+
+                    @if (filesToSync.Any())
+                    {
+                        <div class="mt-3">
+                            <h6>Files to Sync:</h6>
+                            <ul class="list-group">
+                                @foreach (var file in filesToSync)
+                                {
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        @file
+                                        <button class="btn btn-sm btn-danger" @onclick="() => filesToSync.Remove(file)">Remove</button>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    }
+
+                    @if (syncedFiles.Any())
+                    {
+                        <div class="mt-3 alert alert-success">
+                            <h6>Synced Files (@syncedFiles.Count)</h6>
+                            <ul class="mb-0">
+                                @foreach (var file in syncedFiles)
+                                {
+                                    <li>
+                                        <strong>@file.FileName</strong> - 
+                                        @file.LastModifiedUtc.ToString("O") - 
+                                        Size: @FormatBytes(file.FileSize)
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(syncError))
+                    {
+                        <div class="alert alert-danger mt-3">@syncError</div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Repository Tab -->
+        <div class="tab-pane fade" id="repository" role="tabpanel">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Repository Contents</h5>
+                    <button class="btn btn-sm btn-info" @onclick="LoadRepository">Refresh</button>
+                </div>
+                <div class="card-body">
+                    @if (allTimestamps == null)
+                    {
+                        <p>Loading...</p>
+                    }
+                    else if (!allTimestamps.Any())
+                    {
+                        <p class="text-muted">Repository is empty</p>
+                    }
+                    else
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-striped table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>File Name</th>
+                                        <th>Host</th>
+                                        <th>Last Modified (UTC)</th>
+                                        <th>Size</th>
+                                        <th>Hash (first 16 chars)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var timestamp in allTimestamps.OrderByDescending(t => t.LastModifiedUtc))
+                                    {
+                                        <tr>
+                                            <td>@timestamp.FileName</td>
+                                            <td>@timestamp.HostName</td>
+                                            <td>@timestamp.LastModifiedUtc.ToString("O")</td>
+                                            <td>@FormatBytes(timestamp.FileSize)</td>
+                                            <td><code>@timestamp.Sha256Hash.Substring(0, Math.Min(16, timestamp.Sha256Hash.Length))...</code></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Distribute Tab -->
+        <div class="tab-pane fade" id="distribute" role="tabpanel">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Distribute Latest Files</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Target Host Name</label>
+                        <input type="text" class="form-control" @bind="targetHostName" placeholder="e.g., MACHINE-02">
+                    </div>
+
+                    <button class="btn btn-primary" @onclick="GetDistributionUpdates">Get Updates for Host</button>
+
+                    @if (distributionUpdates != null && distributionUpdates.Any())
+                    {
+                        <div class="mt-3 alert alert-info">
+                            <h6>Files to Distribute (@distributionUpdates.Count)</h6>
+                            <div class="table-responsive">
+                                <table class="table table-sm table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>File Name</th>
+                                            <th>Latest From Host</th>
+                                            <th>Timestamp (UTC)</th>
+                                            <th>Size</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var kvp in distributionUpdates)
+                                        {
+                                            var file = kvp.Value;
+                                            <tr>
+                                                <td>@file.FileName</td>
+                                                <td>@file.HostName</td>
+                                                <td>@file.LastModifiedUtc.ToString("O")</td>
+                                                <td>@FormatBytes(file.FileSize)</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    }
+                    else if (distributionUpdates != null)
+                    {
+                        <div class="mt-3 alert alert-success">Host is already up to date</div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(distributeError))
+                    {
+                        <div class="alert alert-danger mt-3">@distributeError</div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Report Tab -->
+        <div class="tab-pane fade" id="report" role="tabpanel">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Repository Report</h5>
+                    <button class="btn btn-sm btn-info" @onclick="GenerateReport">Generate Report</button>
+                    @if (!string.IsNullOrEmpty(reportText))
+                    {
+                        <button class="btn btn-sm btn-secondary" @onclick="DownloadReport">Download</button>
+                    }
+                </div>
+                <div class="card-body">
+                    @if (!string.IsNullOrEmpty(reportText))
+                    {
+                        <pre style="background-color: #f5f5f5; padding: 15px; border-radius: 4px; overflow-x: auto;">@reportText</pre>
+                    }
+                    else
+                    {
+                        <p class="text-muted">Click "Generate Report" to create a repository report</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string hostName = "";
+    private string filePath = "";
+    private string targetHostName = "";
+    private List<string> filesToSync = new();
+    private List<FileTimestampInfo> syncedFiles = new();
+    private List<FileTimestampInfo>? allTimestamps;
+    private Dictionary<string, FileTimestampInfo>? distributionUpdates;
+    private string? syncError;
+    private string? distributeError;
+    private string reportText = "";
+
+    private void AddFileToSync()
+    {
+        if (!string.IsNullOrEmpty(filePath) && !filesToSync.Contains(filePath))
+        {
+            filesToSync.Add(filePath);
+            filePath = "";
+        }
+    }
+
+    private async Task SyncSelectedFiles()
+    {
+        if (string.IsNullOrEmpty(hostName))
+        {
+            syncError = "Please enter a host name";
+            return;
+        }
+
+        try
+        {
+            syncError = null;
+            syncedFiles = await UpdateManager.SyncHostFilesAsync(hostName, filesToSync.ToList());
+            filesToSync.Clear();
+        }
+        catch (Exception ex)
+        {
+            syncError = $"Error during sync: {ex.Message}";
+            Logger.LogError(ex, "Sync error");
+        }
+    }
+
+    private async Task LoadRepository()
+    {
+        allTimestamps = await Repository.GetAllTimestampsAsync();
+    }
+
+    private async Task GetDistributionUpdates()
+    {
+        if (string.IsNullOrEmpty(targetHostName))
+        {
+            distributeError = "Please enter a target host name";
+            return;
+        }
+
+        try
+        {
+            distributeError = null;
+            distributionUpdates = await UpdateManager.DistributeLatestFilesAsync(targetHostName);
+        }
+        catch (Exception ex)
+        {
+            distributeError = $"Error: {ex.Message}";
+            Logger.LogError(ex, "Distribution error");
+        }
+    }
+
+    private async Task GenerateReport()
+    {
+        reportText = await Repository.GenerateRepositoryReportAsync();
+    }
+
+    private async Task DownloadReport()
+    {
+        if (string.IsNullOrEmpty(reportText))
+            return;
+
+        // This would require JavaScript interop in a real scenario
+        // For now, the text is displayed and can be copied
+        await Task.CompletedTask;
+    }
+
+    private static string FormatBytes(long bytes)
+    {
+        string[] sizes = { "B", "KB", "MB", "GB", "TB" };
+        double len = bytes;
+        int order = 0;
+        while (len >= 1024 && order < sizes.Length - 1)
+        {
+            order++;
+            len = len / 1024;
+        }
+
+        return $"{len:0.##} {sizes[order]}";
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadRepository();
+    }
+}

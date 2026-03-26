@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "PLC-UPDATE-26/1.0.0": {
+        "runtime": {
+          "PLC-UPDATE-26.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PLC-UPDATE-26/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

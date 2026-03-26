@@ -1,0 +1,1147 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\project-completion-summary.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\project-completion-summary.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\634647\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1511842757\\FileUpdates.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\634647\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-319999167\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\remote-access-guide.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\remote-access-guide.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\desktop-shortcut-ready.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\desktop-shortcut-ready.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\shortcut-complete.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\shortcut-complete.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\desktop-shortcut-guide.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\desktop-shortcut-guide.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\issue-resolved-final.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\issue-resolved-final.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\application-status-complete.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\application-status-complete.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\https-issue-resolved.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\https-issue-resolved.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\https-warning-fixed.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\https-warning-fixed.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\completion-report.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\completion-report.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\file-manifest.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\file-manifest.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\delivery-summary.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\delivery-summary.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\index.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\index.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\implementation-summary.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\implementation-summary.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\00-start-here.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\00-start-here.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\graphics-ready-to-view.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\graphics-ready-to-view.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\graphics-interface-complete.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\graphics-interface-complete.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\visual-interface-preview.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\visual-interface-preview.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\impressive-graphics-guide.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\impressive-graphics-guide.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\components\\pages\\fileupdates.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\components\\pages\\fileupdates.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\read-me-first.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\read-me-first.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\everything-is-ready.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\everything-is-ready.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\shortcut-quick-start.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\shortcut-quick-start.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\how-to-use-shortcut.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\how-to-use-shortcut.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\shortcut-ready.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\shortcut-ready.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\desktop-shortcut-guide.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\desktop-shortcut-guide.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\you-are-done.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\you-are-done.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\final-completion-report.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\final-completion-report.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\visual-documentation-index.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\visual-documentation-index.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\readme-visual-interface.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\readme-visual-interface.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\quick-start-visual-demo.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\quick-start-visual-demo.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\visual-changes-summary.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\visual-changes-summary.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\visual-summary.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\visual-summary.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\customer-demo-guide.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\customer-demo-guide.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\visual-showcase.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\visual-showcase.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\visual-preview.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\visual-preview.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\visual-interface-guide.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\visual-interface-guide.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\status.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\status.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\corporate-ready.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\corporate-ready.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\cleanup-complete.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\cleanup-complete.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\cleanup-summary.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\cleanup-summary.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\quickstart.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\quickstart.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\deployment-guide.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\deployment-guide.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\usage-guide.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\usage-guide.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\services\\hostsyncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\services\\hostsyncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\utilities\\fileupdateclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\utilities\\fileupdateclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\readme-filetimestampsystem.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\readme-filetimestampsystem.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\controllers\\fileupdatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\controllers\\fileupdatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\services\\fileupdatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\services\\fileupdatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\services\\filetimestampcomparer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\services\\filetimestampcomparer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\services\\filerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\services\\filerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\models\\filetimestampinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\models\\filetimestampinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\responsive-design-guide.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\responsive-design-guide.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\responsive-layout-preview.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\responsive-layout-preview.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\responsive-design-complete.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\responsive-design-complete.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\responsive-quick-reference.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\responsive-quick-reference.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\responsive-design-final-status.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\responsive-design-final-status.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\plc-update-26\\app.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\plc-update-26\\app.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|c:\\users\\634647\\source\\repos\\plc-update-26\\plc-update-26\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1BEEDA5-38E0-B844-56F8-6A156D0267C4}|PLC-UPDATE-26\\PLC-UPDATE-26.csproj|solutionrelative:plc-update-26\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 43,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Components\\App.razor",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\Components\\App.razor",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Components\\App.razor",
+              "RelativeToolTip": "PLC-UPDATE-26\\Components\\App.razor",
+              "ViewState": "AgIAAAQAAAAAAAAAAABRwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T19:35:06.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "app.html",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\app.html",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\app.html",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\app.html",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\app.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-03-20T19:17:36.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "RESPONSIVE-DESIGN-FINAL-STATUS.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-DESIGN-FINAL-STATUS.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-DESIGN-FINAL-STATUS.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-DESIGN-FINAL-STATUS.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-DESIGN-FINAL-STATUS.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-20T18:06:27.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "RESPONSIVE-QUICK-REFERENCE.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-QUICK-REFERENCE.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-QUICK-REFERENCE.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-QUICK-REFERENCE.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-QUICK-REFERENCE.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-20T18:05:51.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "RESPONSIVE-DESIGN-COMPLETE.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-DESIGN-COMPLETE.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-DESIGN-COMPLETE.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-DESIGN-COMPLETE.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-DESIGN-COMPLETE.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-20T18:04:26.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "RESPONSIVE-LAYOUT-PREVIEW.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-LAYOUT-PREVIEW.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-LAYOUT-PREVIEW.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-LAYOUT-PREVIEW.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-LAYOUT-PREVIEW.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-20T18:04:02.844Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "RESPONSIVE-DESIGN-GUIDE.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-DESIGN-GUIDE.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-DESIGN-GUIDE.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-DESIGN-GUIDE.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\RESPONSIVE-DESIGN-GUIDE.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-20T18:03:38.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "REMOTE-ACCESS-GUIDE.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\REMOTE-ACCESS-GUIDE.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\REMOTE-ACCESS-GUIDE.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\REMOTE-ACCESS-GUIDE.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\REMOTE-ACCESS-GUIDE.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T16:26:59.73Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Properties\\launchSettings.json",
+              "RelativeToolTip": "PLC-UPDATE-26\\Properties\\launchSettings.json",
+              "ViewState": "AgIAABoAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-13T16:26:12.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DESKTOP-SHORTCUT-READY.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\DESKTOP-SHORTCUT-READY.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\DESKTOP-SHORTCUT-READY.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\DESKTOP-SHORTCUT-READY.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\DESKTOP-SHORTCUT-READY.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T16:24:55.716Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SHORTCUT-COMPLETE.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\SHORTCUT-COMPLETE.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\SHORTCUT-COMPLETE.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\SHORTCUT-COMPLETE.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\SHORTCUT-COMPLETE.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T16:24:01.145Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DESKTOP-SHORTCUT-GUIDE.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\DESKTOP-SHORTCUT-GUIDE.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\DESKTOP-SHORTCUT-GUIDE.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\DESKTOP-SHORTCUT-GUIDE.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\DESKTOP-SHORTCUT-GUIDE.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T16:23:25.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ISSUE-RESOLVED-FINAL.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\ISSUE-RESOLVED-FINAL.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\ISSUE-RESOLVED-FINAL.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\ISSUE-RESOLVED-FINAL.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\ISSUE-RESOLVED-FINAL.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAN4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T16:07:11.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "APPLICATION-STATUS-COMPLETE.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\APPLICATION-STATUS-COMPLETE.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\APPLICATION-STATUS-COMPLETE.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\APPLICATION-STATUS-COMPLETE.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\APPLICATION-STATUS-COMPLETE.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T16:06:24.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HTTPS-ISSUE-RESOLVED.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\HTTPS-ISSUE-RESOLVED.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\HTTPS-ISSUE-RESOLVED.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\HTTPS-ISSUE-RESOLVED.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\HTTPS-ISSUE-RESOLVED.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T16:05:52.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HTTPS-WARNING-FIXED.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\HTTPS-WARNING-FIXED.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\HTTPS-WARNING-FIXED.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\HTTPS-WARNING-FIXED.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\HTTPS-WARNING-FIXED.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T16:05:32.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "COMPLETION-REPORT.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\COMPLETION-REPORT.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\COMPLETION-REPORT.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\COMPLETION-REPORT.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\COMPLETION-REPORT.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T16:01:06.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\634647\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-319999167\\README.md",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-319999167\\README.md",
+              "ToolTip": "C:\\Users\\634647\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-319999167\\README.md",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-319999167\\README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T16:01:05.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FILE-MANIFEST.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\FILE-MANIFEST.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\FILE-MANIFEST.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\FILE-MANIFEST.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\FILE-MANIFEST.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T16:01:05.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DELIVERY-SUMMARY.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\DELIVERY-SUMMARY.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\DELIVERY-SUMMARY.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\DELIVERY-SUMMARY.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\DELIVERY-SUMMARY.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T16:01:05.684Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "INDEX.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\INDEX.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\INDEX.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\INDEX.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\INDEX.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T16:01:05.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IMPLEMENTATION-SUMMARY.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\IMPLEMENTATION-SUMMARY.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\IMPLEMENTATION-SUMMARY.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\IMPLEMENTATION-SUMMARY.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\IMPLEMENTATION-SUMMARY.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T16:01:05.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FileUpdates.razor",
+              "DocumentMoniker": "C:\\Users\\634647\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1511842757\\FileUpdates.razor",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1511842757\\FileUpdates.razor",
+              "ToolTip": "C:\\Users\\634647\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1511842757\\FileUpdates.razor",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1511842757\\FileUpdates.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T16:01:04.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "00-START-HERE.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\00-START-HERE.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\00-START-HERE.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\00-START-HERE.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\00-START-HERE.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T16:00:40.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GRAPHICS-READY-TO-VIEW.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\GRAPHICS-READY-TO-VIEW.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\GRAPHICS-READY-TO-VIEW.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\GRAPHICS-READY-TO-VIEW.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\GRAPHICS-READY-TO-VIEW.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T16:00:14.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GRAPHICS-INTERFACE-COMPLETE.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\GRAPHICS-INTERFACE-COMPLETE.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\GRAPHICS-INTERFACE-COMPLETE.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\GRAPHICS-INTERFACE-COMPLETE.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\GRAPHICS-INTERFACE-COMPLETE.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T15:59:41.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "VISUAL-INTERFACE-PREVIEW.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-INTERFACE-PREVIEW.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-INTERFACE-PREVIEW.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-INTERFACE-PREVIEW.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-INTERFACE-PREVIEW.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T15:57:29.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IMPRESSIVE-GRAPHICS-GUIDE.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\IMPRESSIVE-GRAPHICS-GUIDE.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\IMPRESSIVE-GRAPHICS-GUIDE.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\IMPRESSIVE-GRAPHICS-GUIDE.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\IMPRESSIVE-GRAPHICS-GUIDE.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T15:56:46.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "FileUpdates.razor",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\Components\\Pages\\FileUpdates.razor",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\Components\\Pages\\FileUpdates.razor",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\Components\\Pages\\FileUpdates.razor",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\Components\\Pages\\FileUpdates.razor",
+              "ViewState": "AgIAAFcCAAAAAAAAAIBJwHwDAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T15:36:06.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "app.css",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\app.css",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\app.css",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\app.css",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\app.css",
+              "ViewState": "AgIAAEwAAAAAAAAAAABBwE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-13T15:30:48.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "READ-ME-FIRST.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\READ-ME-FIRST.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\READ-ME-FIRST.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\READ-ME-FIRST.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\READ-ME-FIRST.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAM0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T15:26:44.588Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "EVERYTHING-IS-READY.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\EVERYTHING-IS-READY.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\EVERYTHING-IS-READY.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\EVERYTHING-IS-READY.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\EVERYTHING-IS-READY.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T15:25:55.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "SHORTCUT-QUICK-START.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\SHORTCUT-QUICK-START.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\SHORTCUT-QUICK-START.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\SHORTCUT-QUICK-START.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\SHORTCUT-QUICK-START.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T15:25:31.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "HOW-TO-USE-SHORTCUT.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\HOW-TO-USE-SHORTCUT.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\HOW-TO-USE-SHORTCUT.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\HOW-TO-USE-SHORTCUT.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\HOW-TO-USE-SHORTCUT.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T15:25:05.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "SHORTCUT-READY.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\SHORTCUT-READY.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\SHORTCUT-READY.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\SHORTCUT-READY.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\SHORTCUT-READY.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T15:24:41.497Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "DESKTOP-SHORTCUT-GUIDE.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\DESKTOP-SHORTCUT-GUIDE.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\DESKTOP-SHORTCUT-GUIDE.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\DESKTOP-SHORTCUT-GUIDE.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\DESKTOP-SHORTCUT-GUIDE.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T15:06:29.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "YOU-ARE-DONE.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\YOU-ARE-DONE.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\YOU-ARE-DONE.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\YOU-ARE-DONE.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\YOU-ARE-DONE.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T14:47:47.284Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "FINAL-COMPLETION-REPORT.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\FINAL-COMPLETION-REPORT.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\FINAL-COMPLETION-REPORT.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\FINAL-COMPLETION-REPORT.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\FINAL-COMPLETION-REPORT.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALQBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T14:47:23.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PROJECT-COMPLETION-SUMMARY.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\PROJECT-COMPLETION-SUMMARY.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\PROJECT-COMPLETION-SUMMARY.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\PROJECT-COMPLETION-SUMMARY.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\PROJECT-COMPLETION-SUMMARY.txt",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAGcBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T14:45:59.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "VISUAL-DOCUMENTATION-INDEX.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-DOCUMENTATION-INDEX.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-DOCUMENTATION-INDEX.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-DOCUMENTATION-INDEX.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-DOCUMENTATION-INDEX.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T14:45:12.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "README-VISUAL-INTERFACE.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\README-VISUAL-INTERFACE.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\README-VISUAL-INTERFACE.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\README-VISUAL-INTERFACE.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\README-VISUAL-INTERFACE.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKcBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T14:44:49.68Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "QUICK-START-VISUAL-DEMO.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\QUICK-START-VISUAL-DEMO.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\QUICK-START-VISUAL-DEMO.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\QUICK-START-VISUAL-DEMO.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\QUICK-START-VISUAL-DEMO.txt",
+              "ViewState": "AgIAANwAAAAAAAAAAAAAwAgBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T14:44:03.684Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "VISUAL-CHANGES-SUMMARY.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-CHANGES-SUMMARY.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-CHANGES-SUMMARY.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-CHANGES-SUMMARY.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-CHANGES-SUMMARY.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T14:43:37.651Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "VISUAL-SUMMARY.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-SUMMARY.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-SUMMARY.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-SUMMARY.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-SUMMARY.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T14:43:12.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "CUSTOMER-DEMO-GUIDE.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\CUSTOMER-DEMO-GUIDE.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\CUSTOMER-DEMO-GUIDE.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\CUSTOMER-DEMO-GUIDE.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\CUSTOMER-DEMO-GUIDE.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T14:42:50.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "VISUAL-SHOWCASE.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-SHOWCASE.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-SHOWCASE.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-SHOWCASE.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-SHOWCASE.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T14:42:27.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "VISUAL-PREVIEW.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-PREVIEW.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-PREVIEW.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-PREVIEW.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-PREVIEW.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T14:41:52.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "VISUAL-INTERFACE-GUIDE.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-INTERFACE-GUIDE.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-INTERFACE-GUIDE.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-INTERFACE-GUIDE.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\VISUAL-INTERFACE-GUIDE.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T14:41:35.819Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\Components\\_Imports.razor",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Components\\_Imports.razor",
+              "RelativeToolTip": "PLC-UPDATE-26\\Components\\_Imports.razor",
+              "ViewState": "AgIAAAkAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T14:30:45.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "STATUS.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\STATUS.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\STATUS.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\STATUS.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\STATUS.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T14:17:30.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "CORPORATE-READY.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\CORPORATE-READY.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\CORPORATE-READY.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\CORPORATE-READY.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\CORPORATE-READY.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T14:17:11.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "CLEANUP-COMPLETE.txt",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\CLEANUP-COMPLETE.txt",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\CLEANUP-COMPLETE.txt",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\CLEANUP-COMPLETE.txt",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\CLEANUP-COMPLETE.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-13T14:16:21.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "CLEANUP-SUMMARY.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\CLEANUP-SUMMARY.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\CLEANUP-SUMMARY.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\CLEANUP-SUMMARY.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\CLEANUP-SUMMARY.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAK4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T14:00:39.706Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\README.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26\\README.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26\\README.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26\\README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T13:59:18.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "PLC-UPDATE-26\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAIAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T13:58:08.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "QUICKSTART.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\QUICKSTART.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\QUICKSTART.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\QUICKSTART.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\QUICKSTART.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T13:15:38.698Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "DEPLOYMENT-GUIDE.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\DEPLOYMENT-GUIDE.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\DEPLOYMENT-GUIDE.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\DEPLOYMENT-GUIDE.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\DEPLOYMENT-GUIDE.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJkBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T13:14:39.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "USAGE-GUIDE.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\USAGE-GUIDE.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\USAGE-GUIDE.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\USAGE-GUIDE.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\USAGE-GUIDE.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T13:14:13.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "HostSyncService.cs",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Services\\HostSyncService.cs",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\Services\\HostSyncService.cs",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Services\\HostSyncService.cs",
+              "RelativeToolTip": "PLC-UPDATE-26\\Services\\HostSyncService.cs",
+              "ViewState": "AgIAALAAAAAAAAAAAIBJwBYBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T13:12:04.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "FileUpdateClient.cs",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Utilities\\FileUpdateClient.cs",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\Utilities\\FileUpdateClient.cs",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Utilities\\FileUpdateClient.cs",
+              "RelativeToolTip": "PLC-UPDATE-26\\Utilities\\FileUpdateClient.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAABRwJoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T13:11:49.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "README-FileTimestampSystem.md",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\README-FileTimestampSystem.md",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\README-FileTimestampSystem.md",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\README-FileTimestampSystem.md",
+              "RelativeToolTip": "PLC-UPDATE-26\\README-FileTimestampSystem.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-13T13:11:37.319Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "PLC-UPDATE-26.csproj",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26.csproj",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\PLC-UPDATE-26.csproj",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\PLC-UPDATE-26.csproj",
+              "RelativeToolTip": "PLC-UPDATE-26\\PLC-UPDATE-26.csproj",
+              "ViewState": "AgIAAAYAAAAAAAAAAIBZwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-13T13:10:17.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "FileUpdateController.cs",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Controllers\\FileUpdateController.cs",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\Controllers\\FileUpdateController.cs",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Controllers\\FileUpdateController.cs",
+              "RelativeToolTip": "PLC-UPDATE-26\\Controllers\\FileUpdateController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T13:09:19.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Program.cs",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\Program.cs",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Program.cs",
+              "RelativeToolTip": "PLC-UPDATE-26\\Program.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T13:09:10.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "FileUpdateManager.cs",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Services\\FileUpdateManager.cs",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\Services\\FileUpdateManager.cs",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Services\\FileUpdateManager.cs",
+              "RelativeToolTip": "PLC-UPDATE-26\\Services\\FileUpdateManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T13:09:07.276Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "FileTimestampComparer.cs",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Services\\FileTimestampComparer.cs",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\Services\\FileTimestampComparer.cs",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Services\\FileTimestampComparer.cs",
+              "RelativeToolTip": "PLC-UPDATE-26\\Services\\FileTimestampComparer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T13:09:00.145Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "FileRepository.cs",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Services\\FileRepository.cs",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\Services\\FileRepository.cs",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Services\\FileRepository.cs",
+              "RelativeToolTip": "PLC-UPDATE-26\\Services\\FileRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJ8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T13:08:53.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "FileTimestampInfo.cs",
+              "DocumentMoniker": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Models\\FileTimestampInfo.cs",
+              "RelativeDocumentMoniker": "PLC-UPDATE-26\\Models\\FileTimestampInfo.cs",
+              "ToolTip": "C:\\Users\\634647\\source\\repos\\PLC-UPDATE-26\\PLC-UPDATE-26\\Models\\FileTimestampInfo.cs",
+              "RelativeToolTip": "PLC-UPDATE-26\\Models\\FileTimestampInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T13:08:41.187Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{08a1bf1d-7967-4afc-8253-1790862ab8c9}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

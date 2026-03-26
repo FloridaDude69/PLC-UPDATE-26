@@ -1,0 +1,34 @@
+name: Publish
+
+on:
+  push:
+    branches: [ "main" ]
+  release:
+    types: [ published ]
+
+jobs:
+  publish:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 10.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore "PLC-UPDATE-26/PLC-UPDATE-26.csproj"
+
+    - name: Publish
+      run: dotnet publish "PLC-UPDATE-26/PLC-UPDATE-26.csproj" --configuration Release --output ./publish
+
+    - name: Upload publish artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: plc-update-26
+        path: ./publish

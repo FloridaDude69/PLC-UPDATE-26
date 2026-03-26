@@ -630,11 +630,11 @@
     <div class="content-section">
         <div class="sidebar">
             <div class="sidebar-title">🎯 Navigation</div>
-            <button class="sidebar-button @(activeTab == "dashboard" ? "active" : "")" @onclick="() => SetTab("dashboard")">📈 Dashboard</button>
-            <button class="sidebar-button @(activeTab == "sync" ? "active" : "")" @onclick="() => SetTab("sync")">⬆️ Sync Files</button>
-            <button class="sidebar-button @(activeTab == "repository" ? "active" : "")" @onclick="() => SetTab("repository")">📁 Repository</button>
-            <button class="sidebar-button @(activeTab == "distribute" ? "active" : "")" @onclick="() => SetTab("distribute")">📦 Distribute</button>
-            <button class="sidebar-button @(activeTab == "report" ? "active" : "")" @onclick="() => SetTab("report")">📄 Report</button>
+            <button class="sidebar-button @(activeTab == "dashboard" ? "active" : "")" @onclick='() => SetTab("dashboard")'>📈 Dashboard</button>
+            <button class="sidebar-button @(activeTab == "sync" ? "active" : "")" @onclick='() => SetTab("sync")'>⬆️ Sync Files</button>
+            <button class="sidebar-button @(activeTab == "repository" ? "active" : "")" @onclick='() => SetTab("repository")'>📁 Repository</button>
+            <button class="sidebar-button @(activeTab == "distribute" ? "active" : "")" @onclick='() => SetTab("distribute")'>📦 Distribute</button>
+            <button class="sidebar-button @(activeTab == "report" ? "active" : "")" @onclick='() => SetTab("report")'>📄 Report</button>
         </div>
 
         <div class="main-display">
